@@ -58,8 +58,8 @@ class NodeRunoffVolumeResponse(RhodiumSwmmResponse):
         super().__init__(name, dir=dir, **kwargs)
 
     def calculate(self, swmm_model, binary_output, **kwargs):
-        return binary_output["peak_flowrate"]
-        #return binary_output["average_flowrate"]
+        #return binary_output["peak_flowrate"]
+        return binary_output["average_flowrate"]
         #return binary_output["peak_total_inflow"]
 
 class SubcatRunoffVolumeResponse(RhodiumSwmmResponse):
