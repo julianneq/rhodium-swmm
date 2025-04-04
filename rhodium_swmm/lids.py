@@ -92,6 +92,15 @@ class RainBarrel(LidControl):
 class PermeablePavement(LidControl):
     lid_type = "PP"
 
+class GrassSwale(LidControl):
+    lid_type = "VS"
+
+class RainGarden(LidControl):
+    lid_type = "RG"
+
+class GreenRoof(LidControl):
+    lid_type = "GR"
+
 @dataclass
 class LidUsage(SwmmInputElement):
     subcatchment: Any
