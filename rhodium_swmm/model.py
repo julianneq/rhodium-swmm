@@ -13,7 +13,10 @@ class RhodiumSwmmModel():
         PermeablePavement.lid_type: PermeablePavement,
         BioretentionCell.lid_type: BioretentionCell,
         InfiltrationTrench.lid_type: InfiltrationTrench,
-        RainBarrel.lid_type: RainBarrel
+        RainBarrel.lid_type: RainBarrel,
+        GrassSwale.lid_type: GrassSwale,
+        RainGarden.lid_type: RainGarden,
+        GreenRoof.lid_type: GreenRoof
     }
 
     SUPPORTED_LAYERS = {
