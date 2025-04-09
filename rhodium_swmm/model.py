@@ -29,7 +29,7 @@ class RhodiumSwmmModel():
     }
 
     #---------------------------------------outfall
-    def __init__(self, node_name, swmm_input_file_template=None, subcatchments = {}, lid_controls = {}, lid_usages = [], responses = []) -> None:
+    def __init__(self, node_name, swmm_input_file_template=None, subcatchments = {}, lid_controls = {}, lid_usages = [], responses = [], constraints = []) -> None:
         self.subcatchments = subcatchments
         self.lid_controls = lid_controls
         self.lid_usages = lid_usages
@@ -47,6 +47,9 @@ class RhodiumSwmmModel():
             self.rhodium_model.uncertainties = self.rhodium_model.uncertainties + r.uncertainties
             self.rhodium_model.levers = self.rhodium_model.levers + r.levers
             self.rhodium_model.parameters = self.rhodium_model.parameters + r.parameters
+
+	for c in constraints:
+	    self.rhodium_model.constraints = self.rhodium_model.constraints + c.constraints
 
 
 
@@ -97,7 +100,7 @@ class RhodiumSwmmModel():
         self.rhodium_model.uncertainties = list(uncertainties.values())
         self.rhodium_model.parameters = list(parameters.values())
 
-        self.rhodium_model.constraints = []
+        self.rhodium_model.constraints = list(constraints.values())
 
         RhodiumParameter.save_all_values()
 
